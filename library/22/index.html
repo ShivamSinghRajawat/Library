@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibNova - Library Management</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using a nice icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-book-open-reader"></i> LibNova
+        </div>
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass" style="color: var(--text-secondary)"></i>
+            <input type="text" id="searchInput" placeholder="Search by title, author, or ISBN...">
+        </div>
+        <button id="addBookBtn" class="btn btn-primary">
+            <i class="fa-solid fa-plus"></i> Add Book
+        </button>
+    </header>
+
+    <main>
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Total Books</h3>
+                <div class="value" id="totalBooks">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Borrowed</h3>
+                <div class="value" id="borrowedBooks">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Available</h3>
+                <div class="value" id="availableBooks">0</div>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2>Library Inventory</h2>
+            <!-- Filter dropdown could go here -->
+        </div>
+
+        <div id="booksGrid" class="books-grid">
+            <!-- Books will be injected here -->
+        </div>
+
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fa-solid fa-books" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+            <h3>No books found in the library</h3>
+            <p>Add a new book to get started or adjust your search.</p>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Book</h2>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <form id="bookForm">
+                <input type="hidden" id="bookId">
+                
+                <div class="form-group">
+                    <label for="title">Book Title</label>
+                    <input type="text" id="title" required placeholder="e.g. The Great Gatsby">
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" required placeholder="e.g. F. Scott Fitzgerald">
+                </div>
+
+                <div class="form-group">
+                    <label for="isbn">ISBN</label>
+                    <input type="text" id="isbn" placeholder="Optional">
+                </div>
+                
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status">
+                        <option value="available">Available</option>
+                        <option value="borrowed">Borrowed</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn" style="background: transparent; color: var(--text-secondary)" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- LOGIN PAGE -->
+  <div id="loginPage" class="login-box">
+    <h2>Get Access To Library</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p class="hint">Read & Learn</p>
+  </div>
+
+  <!-- HOME PAGE -->
+  <div id="homePage" class="hidden">
+    <header>
+      <h1>📚 City Central Library</h1>
+      <p>Library Management System</p>
+    </header>
+
+    <div class="container">
+      <h2>Available Books</h2>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Book Name</th>
+          <th>Author</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>101</td>
+          <td>Java Programming</td>
+          <td>James Gosling</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>102</td>
+          <td>Data Structures</td>
+          <td>Mark Allen Weiss</td>
+          <td>Issued</td>
+        </tr>
+        <tr>
+          <td>103</td>
+          <td>OOPM</td>
+          <td>Balaguru Swami</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>104</td>
+          <td>Digital System</td>
+          <td>SSR</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>105</td>
+          <td>EEE</td>
+          <td>Tanmay Shekh</td>
+          <td>Issued</td>
+        </tr>
+      </table>
+
+      
+    </div>
+    <div>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <p>© 2025 City Central Library | All Rights Reserved</p>
+  <p>Designed by Team "Code Nebula"</p>
+</footer>
+
+
+  <!-- JavaScript always here -->
+  <script src="script.js"></script>
+  
+
+</body>
+</html>
